@@ -28,8 +28,11 @@
 
 // Define symbol IO_NO_HAL to reduce FLASH footprint when HAL features not required
 // The HAL is disabled by default on Nano and Uno platforms, because of limited flash space.
-#if defined(ARDUINO_AVR_NANO) || defined(ARDUINO_AVR_UNO) 
+#if defined(ARDUINO_AVR_NANO) // || defined(ARDUINO_AVR_UNO) 
 #define IO_NO_HAL
+#endif
+#if defined(ARDUINO_AVR_UNO)
+#define SIMPLE_HAL
 #endif
 
 // Define symbol IO_SWITCH_OFF_SERVO to set the PCA9685 output to 0 when an 

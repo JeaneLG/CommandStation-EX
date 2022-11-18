@@ -48,15 +48,15 @@ extern __attribute__((weak)) void mySetup();  // Deprecated function name, outpu
 // and PCA9685.
 void IODevice::begin() {
   // Initialise the IO subsystem
-  ArduinoPins::create(2, NUM_DIGITAL_PINS-2);  // Reserve pins for direct access
+//  ArduinoPins::create(2, NUM_DIGITAL_PINS-2);  // Reserve pins for direct access
   // Predefine two PCA9685 modules 0x40-0x41
   // Allocates 32 pins 100-131
-  PCA9685::create(100, 16, 0x40);
-  PCA9685::create(116, 16, 0x41);
+//  PCA9685::create(100, 16, 0x40);
+//  PCA9685::create(116, 16, 0x41);
   // Predefine two MCP23017 module 0x20/0x21
   // Allocates 32 pins 164-195
-  MCP23017::create(164, 16, 0x20);
-  MCP23017::create(180, 16, 0x21);
+//  MCP23017::create(164, 16, 0x20);
+//  MCP23017::create(180, 16, 0x21);
 
   // Call the begin() methods of each configured device in turn
   for (IODevice *dev=_firstDevice; dev!=NULL; dev = dev->_nextDevice) {
@@ -503,4 +503,3 @@ bool ArduinoPins::fastReadDigital(uint8_t pin) {
 #endif
   return result;
 }
-

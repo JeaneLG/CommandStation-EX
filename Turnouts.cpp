@@ -230,7 +230,7 @@
 
   // Create function
   /* static */ Turnout *ServoTurnout::create(uint16_t id, VPIN vpin, uint16_t thrownPosition, uint16_t closedPosition, uint8_t profile, bool closed) {
-#ifndef IO_NO_HAL
+#if !defined(IO_NO_HAL) && !defined(SIMPLE_HAL)
     Turnout *tt = get(id);
     if (tt) { 
       // Object already exists, check if it is usable
@@ -295,7 +295,7 @@
 
   // ServoTurnout-specific code for throwing or closing a servo turnout.
   bool ServoTurnout::setClosedInternal(bool close) {
-#ifndef IO_NO_HAL
+#if !defined(IO_NO_HAL) && !defined(SIMPLE_HAL)
     IODevice::writeAnalogue(_servoTurnoutData.vpin, 
       close ? _servoTurnoutData.closedPosition : _servoTurnoutData.thrownPosition, _servoTurnoutData.profile);
     _turnoutData.closed = close;
@@ -536,4 +536,3 @@
     StringFormatter::send(stream, F("<H %d LCN %d>\n"), _turnoutData.id, 
     !_turnoutData.closed); 
   }
-
