@@ -14,11 +14,11 @@
 //--------------------------------------------------------------
 //Pinbelegungen am Dekoder:
   //Eingänge:
-#define S88DataPin 4      //S88 Data IN
+#define S88DataPin 2      //S88 Data IN
   //Ausgänge:
-#define S88ClkPin 5    //S88 Clock
-#define S88PSPin 6    //S88 PS/LOAD
-#define S88ResetPin 7    //S88 Reset
+#define S88ClkPin 4    //S88 Clock
+#define S88PSPin 5    //S88 PS/LOAD
+#define S88ResetPin 6    //S88 Reset
 
 #define FIRST_VPIN_S88 880
 #define InputsPerModule 8
