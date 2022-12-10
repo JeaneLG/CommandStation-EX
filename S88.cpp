@@ -80,8 +80,8 @@ void S88Master::_display() {
 
 void S88Master::createSensors()
 {
-  int pin = FIRST_VPIN_S88;
-  for (; pin<FIRST_VPIN_S88+_nPins; pin++) Sensor::create(pin, pin, 1);
+  int pin = _firstVpin;
+  for (; pin<_firstVpin+_nPins; pin++) Sensor::create(pin, pin, 1);
 }
 
 //Einlesen des Daten-Bit und Vergleich mit vorherigem Durchlauf
